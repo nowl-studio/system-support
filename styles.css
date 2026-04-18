@@ -250,8 +250,7 @@ h2 {
 }
 
 .card.featured {
-  border: 2px solid #f1d79e;
-  background: linear-gradient(180deg, #fffdfa 0, #fff 100%);
+
 }
 
 .card h3 {
@@ -388,4 +387,44 @@ h2 {
   .contact-box {
     padding: 1.4rem;
   }
+}
+
+.contact-form {
+  margin-top: 1.5rem;
+  max-width: 640px;
+}
+
+.form-row {
+  margin-bottom: 0.85rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.96);
+  box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #7a879c;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-submit {
+  border: none;
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  opacity: 0.95;
 }
