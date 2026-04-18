@@ -158,27 +158,71 @@
       </section>
 
       <section id="contact" class="section contact">
-        <div class="container contact-box">
-          <div class="contact-copy">
-            <h2>まずは無料診断からお気軽にご相談ください</h2>
-            <p>
-              「どこから手をつければいいか分からない」という段階でも問題ありません。
-              貴社業務の現状を整理し、優先順位の高い改善テーマをご提案します。
-            </p>
-            <a href="mailto:info@nowl.co.jp" class="btn btn-primary">無料で相談する</a>
-          </div>
-          <div class="contact-illustration" aria-hidden="true">
-            <svg viewBox="0 0 300 220" role="img">
-              <rect x="20" y="26" width="260" height="168" rx="24" fill="#ffffff" opacity="0.95" />
-              <circle cx="84" cy="96" r="24" fill="#bce4d0" />
-              <rect x="120" y="78" width="110" height="10" rx="5" fill="#8eb7d7" />
-              <rect x="120" y="98" width="80" height="8" rx="4" fill="#c6d8eb" />
-              <rect x="58" y="136" width="180" height="36" rx="12" fill="#eff5ff" />
-              <path d="M82 154h18m8 0h20m8 0h46" stroke="#9cb6d8" stroke-width="6" stroke-linecap="round" />
-            </svg>
-          </div>
+  <div class="container contact-box">
+    <div class="contact-copy">
+      <h2>まずは無料診断からお気軽にご相談ください</h2>
+      <p>
+        「どこから手をつければいいか分からない」という段階でも問題ありません。
+        貴社業務の現状を整理し、優先順位の高い改善テーマをご提案します。
+      </p>
+
+      <form
+        class="contact-form"
+        action="https://script.google.com/macros/s/AKfycbztnqtSJgYwyNWhHAmfyvVfpp_5_9Rw5To2ndO63gauKOkSztuBOm7ycCENWs_DOWE/exec"
+        method="post"
+      >
+        <div class="form-row">
+          <input type="text" name="company" placeholder="会社名" required>
         </div>
-      </section>
+
+        <div class="form-row">
+          <input type="text" name="department" placeholder="部署">
+        </div>
+
+        <div class="form-row">
+          <input type="text" name="name" placeholder="担当者名" required>
+        </div>
+
+        <div class="form-row">
+          <input type="text" name="kana" placeholder="担当者名（カナ）">
+        </div>
+
+        <div class="form-row">
+          <input type="email" name="email" placeholder="メールアドレス" required>
+        </div>
+
+        <div class="form-row">
+          <input
+            type="tel"
+            name="tel"
+            placeholder="電話番号（ハイフンなし）"
+            pattern="[0-9]+"
+            required
+          >
+        </div>
+
+        <div class="form-row">
+          <textarea name="message" rows="5" placeholder="ご相談内容"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary contact-submit">
+          送信
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-illustration" aria-hidden="true">
+      <svg viewBox="0 0 300 220" role="img">
+        <rect x="20" y="26" width="260" height="168" rx="24" fill="#ffffff" opacity="0.95" />
+        <circle cx="84" cy="96" r="24" fill="#bce4d0" />
+        <rect x="120" y="78" width="110" height="10" rx="5" fill="#8eb7d7" />
+        <rect x="120" y="98" width="80" height="8" rx="4" fill="#c6d8eb" />
+        <rect x="58" y="136" width="180" height="36" rx="12" fill="#eff5ff" />
+        <path d="M82 154h18m8 0h20m8 0h46" stroke="#9cb6d8" stroke-width="6" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+</section>
     </main>
 
     <footer class="site-footer">
