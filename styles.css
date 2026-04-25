@@ -20,6 +20,7 @@ body {
   color: var(--text);
   background: radial-gradient(circle at 20% 10%, #fffef8 0, #f7f8fc 34%, #f7f8fc 100%);
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 .container {
@@ -61,6 +62,7 @@ body {
   font-size: 0.9rem;
   color: var(--primary);
   font-weight: 500;
+  word-break: break-all;
 }
 
 .header-cta {
@@ -223,6 +225,32 @@ h2 {
   line-height: 1;
 }
 
+.solution {
+  background: #f9fbff;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem;
+  background: #fff;
+}
+
+.feature-card h3 {
+  margin: 0 0 0.5rem;
+  color: #2f5f99;
+}
+
+.feature-card p {
+  margin: 0;
+}
+
 .service-section {
   position: relative;
 }
@@ -310,6 +338,76 @@ h2 {
   color: var(--primary);
 }
 
+.cases {
+  background: #fff;
+}
+
+.case-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.case-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.case-table th,
+.case-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.case-table th {
+  background: #edf4ff;
+  color: #2f4f80;
+  font-size: 0.95rem;
+}
+
+.case-table tbody tr:nth-child(even) {
+  background: #fbfdff;
+}
+
+.merits {
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.merit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.merit-list article {
+  border: 1px dashed #9db6da;
+  border-radius: 14px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.merit-list h3 {
+  margin: 0 0 0.4rem;
+  color: #2f5f99;
+}
+
+.merit-list p {
+  margin: 0;
+}
+
+.section-note {
+  margin-top: 1.2rem;
+  color: #3f5f90;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid #cddcf3;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
 .contact {
   padding-top: 1rem;
 }
@@ -375,13 +473,43 @@ h2 {
     width: min(1100px, calc(100% - 1.5rem));
   }
 
+  .logo {
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+  }
+
   .nav-wrap {
     gap: 0.75rem;
     flex-direction: column;
   }
 
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-contact {
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  .header-cta {
+    text-align: center;
+  }
+
   .hero {
     padding-top: 4.5rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .flow-list li {
+    align-items: flex-start;
   }
 
   .contact-box {
