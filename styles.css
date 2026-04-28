@@ -171,11 +171,8 @@ h1 span {
   max-width: 360px;
   display: block;
   margin-inline: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 3;
   object-fit: cover;
-  border-radius: 18px;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 28px rgba(47, 80, 109, 0.22);
 }
 
 .btn {
@@ -220,10 +217,6 @@ h2 {
 }
 
 .problem-head {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 1fr auto;
-  align-items: end;
   margin-bottom: 1.3rem;
 }
 
@@ -235,23 +228,29 @@ h2 {
   margin-bottom: 0;
 }
 
-.problem-image {
-  width: 100%;
-  max-width: 170px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  box-shadow: 0 12px 22px rgba(47, 80, 109, 0.12);
+.problem-content {
+  display: grid;
+  grid-template-columns: 1.7fr 0.8fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .problem-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+.problem-image {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 3 / 3;
+  object-fit: cover;
+  display: block;
+  justify-self: center;
 }
 
 .problem-list li {
@@ -268,6 +267,59 @@ h2 {
 .problem-list span {
   font-size: 1.2rem;
   line-height: 1;
+}
+
+.problem-transform {
+  margin-top: 1.3rem;
+  padding: 1.1rem;
+  border-radius: 16px;
+  border: 1px solid #d4e2f5;
+  background: linear-gradient(180deg, #f7fbff 0%, #eef5ff 100%);
+}
+
+.transform-title {
+  margin: 0 0 0.8rem;
+  font-weight: 700;
+  color: #2b537f;
+}
+
+.transform-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.transform-card {
+  border-radius: 14px;
+  border: 1px solid #cad9ee;
+  background: #fff;
+  padding: 1rem;
+}
+
+.transform-card h3 {
+  margin: 0 0 0.55rem;
+}
+
+.transform-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.transform-card li + li {
+  margin-top: 0.4rem;
+}
+
+.transform-before h3 {
+  color: #60708a;
+}
+
+.transform-after {
+  border-color: #afcbed;
+  background: #f0f7ff;
+}
+
+.transform-after h3 {
+  color: #2f5f99;
 }
 
 .solution {
@@ -300,6 +352,194 @@ h2 {
   position: relative;
 }
 
+.automation-menu {
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+
+.automation-layout {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 320px 1fr;
+  grid-template-areas:
+    "excel excel excel"
+    "robot person google";
+  gap: 1.6rem 1.5rem;
+  align-items: center;
+}
+
+.bubble-excel {
+  grid-area: excel;
+  width: min(100%, 400px);
+  justify-self: center;
+}
+
+.bubble-robot {
+  grid-area: robot;
+  justify-self: end;
+}
+
+.bubble-google {
+  grid-area: google;
+  justify-self: start;
+}
+
+.automation-person {
+  grid-area: person;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.automation-person img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.automation-bubble {
+  position: relative;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid #cfe0f5;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(47, 95, 153, 0.08);
+}
+
+.automation-bubble h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  color: #2f5f99;
+}
+
+.automation-bubble ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.automation-bubble li {
+  margin-bottom: 0.5rem;
+  color: #2a4f7c;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.automation-bubble li:last-child {
+  margin-bottom: 0;
+}
+
+/* 思考バブル風の丸 */
+.bubble-excel::before,
+.bubble-excel::after,
+.bubble-robot::before,
+.bubble-robot::after,
+.bubble-google::before,
+.bubble-google::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #cfe0f5;
+}
+
+/* 上の吹き出し → 男性のほうへ */
+.bubble-excel::before {
+  width: 18px;
+  height: 18px;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+}
+
+.bubble-excel::after {
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  bottom: -34px;
+  transform: translateX(-50%);
+}
+
+/* 左側の吹き出し → 男性のほうへ */
+.bubble-robot::before {
+  width: 18px;
+  height: 18px;
+  right: -18px;
+  top: 48%;
+}
+
+.bubble-robot::after {
+  width: 10px;
+  height: 10px;
+  right: -34px;
+  top: 58%;
+}
+
+/* 右側の吹き出し → 男性のほうへ */
+.bubble-google::before {
+  width: 18px;
+  height: 18px;
+  left: -18px;
+  top: 48%;
+}
+
+.bubble-google::after {
+  width: 10px;
+  height: 10px;
+  left: -34px;
+  top: 58%;
+}
+
+.automation-note {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #d6e2f4;
+  background: #eff6ff;
+}
+
+.process {
+  background: linear-gradient(180deg, #edf4ff 0%, #f8fcff 100%);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.process-grid li {
+  background: #fff;
+  border: 1px solid #cfe0f3;
+  border-radius: 14px;
+  padding: 0.95rem;
+}
+
+.process-grid span {
+  display: inline-block;
+  color: #ffffff;
+  background: #2f5f99;
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.process-grid h3 {
+  margin: 0.5rem 0 0.35rem;
+  color: #2f5f99;
+}
+
+.process-grid p {
+  margin: 0;
+}
+
+.process-note {
+  margin-top: 1rem;
+}
+
 .service-section::before {
   content: "";
   position: absolute;
@@ -320,11 +560,6 @@ h2 {
   border-radius: 18px;
   padding: 1.25rem;
   box-shadow: var(--shadow);
-}
-
-.card.featured {
-  border-color: #d8cb70;
-  background: linear-gradient(170deg, #fffcf0 0%, #ffffff 80%);
 }
 
 .card h3 {
@@ -419,32 +654,6 @@ h2 {
   background: #fbfdff;
 }
 
-.merits {
-  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
-}
-
-.merit-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
-}
-
-.merit-list article {
-  border: 1px dashed #9db6da;
-  border-radius: 14px;
-  background: #fff;
-  padding: 1rem;
-}
-
-.merit-list h3 {
-  margin: 0 0 0.4rem;
-  color: #2f5f99;
-}
-
-.merit-list p {
-  margin: 0;
-}
-
 .section-note {
   margin-top: 1.2rem;
   color: #3f5f90;
@@ -499,6 +708,39 @@ h2 {
   font-size: 0.9rem;
 }
 
+
+
+@media (max-width: 900px) {
+  .automation-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "excel"
+      "robot"
+      "google"
+      "person";
+  }
+
+  .bubble-excel,
+  .bubble-robot,
+  .bubble-google {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .automation-person {
+    margin-top: 0.5rem;
+  }
+
+  .automation-bubble::before,
+  .automation-bubble::after {
+    display: none;
+  }
+
+  .automation-person img {
+    max-width: 240px;
+  }
+}
+
 @media (max-width: 880px) {
   .hero-layout,
   .contact-box {
@@ -513,14 +755,6 @@ h2 {
     margin-right: auto;
   }
 
-  .problem-head {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
-  .problem-image {
-    max-width: 240px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -569,6 +803,19 @@ h2 {
 
   .contact-box {
     padding: 1.4rem;
+  }
+
+  .problem-content {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-list {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-image {
+    max-width: 240px;
+    margin: 0 auto;
   }
 }
 
